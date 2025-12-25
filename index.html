@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DEVKI MILL MAISHA MABATI</title>
+
+<!-- BOXICONS -->
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"> 
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #0b3c91;
+  --secondary: #c4161c;
+  --accent: #f4c430;
+  --dark: #0f172a;
+  --muted: #64748b;
+  --light: #f8fafc;
+  --white: #ffffff;
+  --gradient-main: linear-gradient(135deg, #0b3c91, #c4161c);
+}
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+body { background:var(--light); color:var(--dark); line-height:1.7; padding-top:120px; }
+a { text-decoration:none; color:inherit; }
+
+/* HEADER CENTERED & BIGGER */
+header { position:fixed; top:0; width:100%; z-index:1000; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); border-bottom:2px solid #e5e7eb; }
+.header-inner { max-width:1200px; margin:auto; padding:28px 40px; display:flex; justify-content:center; align-items:center; flex-direction:column; gap:12px; }
+.logo { display:flex; align-items:center; gap:16px; }
+.logo img { width:64px; height:64px; border-radius:10px; }
+.logo h1 { font-size:28px; font-weight:700; background:var(--gradient-main); -webkit-background-clip:text; -webkit-text-fill-color:transparent; text-align:center; }
+nav a { margin-left:20px; font-weight:500; position:relative; }
+nav a::after { content:""; position:absolute; left:0; bottom:-6px; width:0; height:3px; background:var(--secondary); transition:.3s; }
+nav a:hover::after { width:100%; }
+
+.hero { background:var(--gradient-main); color:var(--white); padding:160px 20px 120px; text-align:left; }
+.hero h2 { font-size:52px; font-weight:700; margin-bottom:20px; }
+.hero p { max-width:800px; font-size:18px; color:#e5e7eb; }
+
+/* HERO BUTTONS CENTERED */
+.hero-buttons { margin-top:25px; display:flex; flex-direction:column; align-items:center; gap:15px; }
+.hero-buttons a { display:flex; align-items:center; justify-content:center; width:180px; height:48px; padding:0 16px; border-radius:10px; font-weight:600; color:var(--white); font-size:16px; transition:0.2s; text-decoration:none; }
+.hero-buttons a.whatsapp { background-color:#25D366; }
+.hero-buttons a.call { background-color:var(--primary); }
+.hero-buttons a.email { background-color:var(--secondary); }
+.hero-buttons a:hover { transform:scale(1.05); }
+
+section { max-width:1200px; margin:auto; padding:90px 40px; }
+section h3 { font-size:34px; margin-bottom:20px; position:relative; }
+section h3::after { content:""; width:70px; height:4px; background:var(--secondary); display:block; margin-top:12px; }
+section p { color:var(--muted); max-width:900px; margin-bottom:20px; }
+
+.products { background:var(--white); }
+.product-grid { margin-top:50px; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; }
+.card { background:var(--white); border-radius:16px; overflow:hidden; box-shadow:0 15px 40px rgba(0,0,0,.08); transition:.35s; display:flex; flex-direction:column; }
+.card img { width:100%; height:220px; object-fit:cover; transition: transform 0.3s ease; }
+.card img:hover { transform:scale(1.05); }
+.card-body { padding:22px; flex:1; }
+.card h4 { font-size:20px; margin-bottom:10px; }
+.card p { font-size:15px; color:var(--primary); }
+
+.buy-btn { margin:20px; text-align:center; padding:12px; border-radius:10px; font-weight:600; background:var(--gradient-main); color:var(--white); display:block; transition: transform 0.2s; }
+.buy-btn:hover { transform:scale(1.05); }
+
+footer { background:#020617; color:#cbd5f5; padding:70px 40px 35px; }
+.footer-inner { max-width:1200px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:35px; }
+.footer-inner h4 { color:var(--accent); margin-bottom:10px; }
+.footer-item { display:flex; gap:14px; align-items:flex-start; }
+.footer-item i { font-size:26px; color:var(--accent); }
+.footer-bottom { max-width:1200px; margin:40px auto 0; padding-top:20px; border-top:1px solid #1e293b; font-size:14px; color:#94a3b8; text-align:center; }
+
+.fixed-buttons { position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:15px; z-index:10000; }
+.fixed-buttons a { display:flex; justify-content:center; align-items:center; width:60px; height:60px; border-radius:50%; color:white; font-size:28px; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:transform 0.2s; }
+.fixed-buttons a:hover { transform:scale(1.1); }
+.whatsapp-btn { background-color:#25D366; }
+.call-btn { background-color:#0b3c91; }
+
+@media(max-width:768px){ 
+  .hero h2{ font-size:34px; } 
+  nav a{ margin-left:16px; } 
+  .header-inner { padding:20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <img src="logo.jfif" alt="Devki Mill Maisha Mabati">
+      <h1>DEVKI MILL MAISHA MABATI</h1>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#iron-products">Products</a>
+      <a href="#footer">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <h2>Strong • Durable • Affordable Roofing</h2>
+  <p>Leading manufacturer and supplier of high-quality steel mabati roofing solutions for residential, commercial and industrial projects across Kenya.</p>
+
+  <div class="hero-buttons">
+    <a href="https://wa.me/254734352553" class="whatsapp" target="_blank"><i class='bx bxl-whatsapp'></i> WhatsApp</a>
+    <a href="tel:+254734352553" class="call"><i class='bx bx-phone'></i> Call</a>
+    <a href="mailto:maishamabati56@gmail.com" class="email"><i class='bx bx-envelope'></i> Email</a>
+  </div>
+</div>
+
+<section id="about">
+  <h3>About Us</h3>
+  <p>DEVKI MILL MAISHA MABATI is a trusted name in steel roofing solutions. We specialize in durable mabati sheets engineered for strength, longevity, and modern aesthetics. Our products meet the needs of homes, businesses, and large-scale industrial projects, delivering quality you can rely on.</p>
+</section>
+
+<!-- IRON PRODUCTS -->
+<section id="iron-products" class="products">
+  <h3>IRON SHEET PRODUCTS</h3>
+  <div class="product-grid">
+    <div class="card"><img src="corrugated.jfif" alt="Corrugated Dumuzaz"><div class="card-body"><h4>Corrugated Dumuzaz</h4><p>Gauge 30 corrugated sheets from Ksh350 per metre. Strong, economical and ideal for all roofing needs.</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+    <div class="card"><img src="dumuzas.jfif" alt="Dumuzas Ordinary"><div class="card-body"><h4>Dumuzas Ordinary Gauge 30</h4><p>Affordable mabati at Ksh300 per metre. Free delivery countrywide on bulk orders.</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+    <div class="card"><img src="versitile.jfif" alt="Versatile Mabati"><div class="card-body"><h4>Versatile, Eurotile & Zee Tile</h4><p>Modern tile-style mabati in a wide range of colors, combining beauty with durability.</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+    <div class="card"><img src="im1.jfif" alt="Box Profile Mabati"><div class="card-body"><h4>Box Profile Gauge 30</h4><p>Premium box profile sheets at Ksh440 per metre. Free delivery on large orders.</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+    <div class="card"><img src="im2.jfif" alt="Roman Tile Mabati"><div class="card-body"><h4>Roman Tile Gauge 30</h4><p>Elegant Roman tile mabati from Ksh550 per metre, perfect for modern homes.</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+    <div class="card"><img src="im3.jfif" alt="Roofing Accessories"><div class="card-body"><h4>Roofing Accessories</h4><p>Complete roofing solutions including ridges, screws, valleys and fasteners.</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  </div>
+</section>
+
+<!-- STEEL PRODUCTS -->
+<section id="steel-products" class="products">
+<h3>STEEL PRODUCTS</h3>
+<div class="product-grid">
+  <div class="card"><img src="steel pro 1.jfif" alt="Reinforcement Bars"><div class="card-body"><h4>Reinforcement Bars D8</h4><p>KES 450</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 2.jfif" alt="D10 Reinforced"><div class="card-body"><h4>D10 Reinforced</h4><p>D10 KEBS Tested KES 750</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 3.jfif" alt="Reinforcement D12"><div class="card-body"><h4>Reinforcement D12</h4><p>KES 950</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 4.jfif" alt="D16 KEBS Accredited"><div class="card-body"><h4>D16 KEBS Accredited</h4><p>KES 1900</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 5.jfif" alt="D20"><div class="card-body"><h4>D20</h4><p>KES 3100</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 6.jfif" alt="D25"><div class="card-body"><h4>D25</h4><p>KES 5200</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 7.jfif" alt="D32"><div class="card-body"><h4>D32</h4><p>KES 11,000</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 8.jfif" alt="Steel Pipes"><div class="card-body"><h4>Steel Pipes</h4><p>Square & round tubes KES 560</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 9.jfif" alt="Binding Wire"><div class="card-body"><h4>Binding Wire</h4><p>Galvanized 25kg KES 2,500</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 10.jfif" alt="Chain Link"><div class="card-body"><h4>Chain Link</h4><p>KES 3,000/roll</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 11.jfif" alt="Barbed Wire"><div class="card-body"><h4>Barbed Wire</h4><p>KES 2,700/roll</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 12.jfif" alt="Razor Wire"><div class="card-body"><h4>Razor Wire</h4><p>KES 3,000/roll</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 13.jfif" alt="Weld Wires"><div class="card-body"><h4>Weld Wires</h4><p>Premade sheets per meter</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 14.jfif" alt="Steel Truss"><div class="card-body"><h4>Steel Truss</h4><p>Prefabricated trusses KES 400/unit</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 15.jfif" alt="Wire Nails"><div class="card-body"><h4>Wire Nails</h4><p>KES 430</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 16.jfif" alt="UNAILS"><div class="card-body"><h4>U-Nails</h4><p>KES 360</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 17.jfif" alt="Plastic Poles"><div class="card-body"><h4>Plastic Poles</h4><p>3" @75/Ft, 4" @115/Ft, 5" @160/Ft</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 18.jfif" alt="Timber Plank"><div class="card-body"><h4>Timber Plank</h4><p>2m structural plank KES 540</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 19.jfif" alt="Fixing Nails"><div class="card-body"><h4>Fixing Nails</h4><p>1kg galvanized KES 120</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 20.jfif" alt="Treated Timber Beam"><div class="card-body"><h4>Treated Timber Beam</h4><p>8ft pressure-treated beam KES 1,200</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 21.jfif" alt="Roof Insulation Foam"><div class="card-body"><h4>Roof Insulation Foam</h4><p>Per m² spray & sheet foam KES 4,200</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 22.jfif" alt="Roof Paint"><div class="card-body"><h4>Roof Paint — 20L</h4><p>Heat-reflective KES 2,400</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+  <div class="card"><img src="steel pro 23.jfif" alt="Plywood Sheet"><div class="card-body"><h4>Plywood Sheet — 8×4</h4><p>For ceilings, soffits, formwork KES 2,800</p></div><a href="https://wa.me/254734352553" class="buy-btn">Buy Now</a></div>
+</div>
+</section>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-item">
+      <i class="bx bx-map"></i>
+      <div>
+        <h4>Location</h4>
+        <p>Ruiru, Kamiti Road</p>
+      </div>
+    </div>
+    <div class="footer-item">
+      <i class="bx bx-envelope"></i>
+      <div>
+        <h4>Email</h4>
+        <p>maishamabati56@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-item">
+      <i class="bx bx-phone"></i>
+      <div>
+        <h4>Phone</h4>
+        <p>+254 734 352 553</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 DEVKI MILL MAISHA MABATI. All rights reserved.
+  </div>
+</footer>
+
+<div class="fixed-buttons">
+  <a href="https://wa.me/254734352553" class="whatsapp-btn" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+  <a href="tel:+254734352553" class="call-btn"><i class='bx bx-phone'></i></a>
+</div>
+
+</body>
+</html>
