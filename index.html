@@ -11,6 +11,22 @@
 <link rel="icon" href="logo.jfif">
 
 <style>
+  .order-now-btn {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  background: #25D366;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.order-now-btn:hover {
+  background: #1ebe5d;
+}
+
 :root{
 --primary:#0b3c91;
 --secondary:#c4161c;
@@ -356,8 +372,25 @@ color:white;font-size:26px;
 <a class="call-btn" href="tel:+254734352553"><i class='bx bx-phone'></i></a>
 </div>
 
+
+  <script>
+  document.querySelectorAll('.card').forEach(card => {
+    // Avoid duplicate buttons
+    if (card.querySelector('.order-now-btn')) return;
+
+    const btn = document.createElement('a');
+    btn.href = 'https://wa.me/254734569887';
+    btn.target = '_blank';
+    btn.textContent = 'Order Now';
+    btn.className = 'order-now-btn';
+
+    card.appendChild(btn);
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
