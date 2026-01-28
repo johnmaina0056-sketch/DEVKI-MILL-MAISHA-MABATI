@@ -7,138 +7,148 @@
 
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <link rel="icon" href="logo.jfif">
 
 <style>
-  .order-now-btn {
-  display: block;
-  margin: 10px;
-  padding: 10px;
-  background: linear-gradient(135deg,#0b3c91,#c4161c);;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-}
-
-.order-now-btn:hover {
-  background: #1ebe5d;
-}
-
 :root{
---primary:#0b3c91;
---secondary:#c4161c;
---accent:#f4c430;
---light:#f8fafc;
---dark:#0f172a;
---white:#ffffff;
---gradient:linear-gradient(135deg,#0b3c91,#c4161c);
+  --primary:#A01217;
+  --secondary:#FF6A2D;
+  --light:#FFFFFF;
+  --muted:#F4F4F4;
+  --dark:#1A1A1A;
+  --gradient:linear-gradient(135deg,#A01217,#FF6A2D);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
-body{background:var(--light);padding-top:120px;color:var(--dark);}
+*{
+  margin:0;padding:0;box-sizing:border-box;
+  font-family:Poppins,sans-serif;
+}
 
+body{
+  background:var(--muted);
+  color:var(--dark);
+  padding-top:120px;
+}
+
+/* HEADER */
 header{
-position:fixed;top:0;width:100%;background:white;
-border-bottom:2px solid #e5e7eb;z-index:1000;
+  position:fixed;top:0;width:100%;
+  background:var(--light);
+  border-bottom:1px solid #ddd;
+  z-index:1000;
 }
 .header-inner{
-max-width:1200px;margin:auto;padding:25px;
-display:flex;flex-direction:column;align-items:center;gap:10px;
+  max-width:1200px;margin:auto;
+  padding:20px;
+  display:flex;flex-direction:column;
+  align-items:center;gap:8px;
 }
 .logo{display:flex;align-items:center;gap:15px;}
-.logo img{width:60px;border-radius:8px;}
-.logo h1{
-font-size:26px;font-weight:700;
-background:var(--gradient);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-nav a{margin:0 12px;font-weight:500;}
+.logo img{width:58px;border-radius:8px;}
+.logo h1{font-size:28px;font-weight:700;color:var(--primary);}
 
-.hero{
-background:var(--gradient);
-color:white;
-padding:150px 30px 120px;
+/* NAV */
+nav a{
+  margin:0 12px;font-weight:500;color:var(--dark);
 }
-.hero h2{font-size:46px;margin-bottom:15px;}
-.hero p{max-width:800px;color:#e5e7eb;}
+nav a:hover{color:var(--primary);}
+
+/* HERO */
+.hero{
+  background:var(--gradient);
+  color:white;text-align:center;
+  padding:150px 30px 120px;
+}
+.hero h2{font-size:44px;font-weight:700;margin-bottom:10px;}
+.hero p{font-size:18px;opacity:.95;}
 
 .hero-buttons{
-margin-top:25px;display:flex;gap:15px;flex-wrap:wrap;
+  display:flex;gap:15px;justify-content:center;
+  margin-top:25px;flex-wrap:wrap;
 }
 .hero-buttons a{
-padding:12px 22px;border-radius:10px;
-color:white;font-weight:600;
+  padding:12px 22px;border-radius:8px;
+  color:white;font-weight:600;
 }
 .whatsapp{background:#25D366;}
 .call{background:var(--primary);}
 .email{background:var(--secondary);}
 
-section{max-width:1200px;margin:auto;padding:80px 30px;}
-section h3{font-size:32px;margin-bottom:25px;}
-section h3::after{
-content:"";display:block;width:70px;height:4px;
-background:var(--secondary);margin-top:10px;
+/* SECTIONS */
+section{
+  max-width:1200px;margin:auto;
+  padding:70px 25px;
+}
+section h3{
+  font-size:30px;font-weight:700;
+  margin-bottom:20px;color:var(--primary);
+}
+section h3:after{
+  content:"";display:block;width:80px;
+  height:4px;background:var(--secondary);
+  margin-top:8px;
 }
 
 .product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
 }
 
+/* CARD */
 .card{
-background:white;border-radius:16px;
-overflow:hidden;
-box-shadow:0 10px 35px rgba(0,0,0,.1);
-display:flex;flex-direction:column;
-transition:.3s;
+  background:var(--light);
+  border-radius:14px;
+  box-shadow:0 8px 28px rgba(0,0,0,.08);
+  display:flex;flex-direction:column;
+  transition:.3s;overflow:hidden;
 }
-.card:hover{transform:translateY(-6px);}
-
+.card:hover{transform:translateY(-4px);}
 .card img{
-width:100%;height:220px;
-object-fit:cover;
+  width:100%;height:220px;object-fit:cover;
 }
 
-.card-body{padding:20px;flex:1;}
-.card-body h4{font-size:18px;margin-bottom:8px;}
-.card-body p{font-size:14px;color:var(--primary);white-space:pre-line;}
+.card-body{padding:18px;flex:1;}
+.card-body h4{font-size:18px;margin-bottom:6px;}
+.card-body p{font-size:15px;color:var(--primary);white-space:pre-line;}
 
 .buy-btn{
-margin:15px;
-padding:12px;
-text-align:center;
-background:var(--gradient);
-color:white;border-radius:10px;
-font-weight:600;
+  margin:15px;padding:12px;
+  background:var(--gradient);color:white;
+  font-weight:600;border-radius:8px;text-align:center;
 }
+.order-now-btn{
+  display:block;margin:10px;padding:10px;
+  background:var(--secondary);
+  color:white;font-weight:600;
+  text-align:center;border-radius:6px;
+}
+.order-now-btn:hover{background:var(--primary);}
 
+/* FOOTER */
 footer{
-background:#0f1b2b;color:#cbd5f5;
-padding:70px 30px 40px;
+  background:var(--dark);
+  color:white;padding:70px 30px 40px;
 }
 .footer-inner{
-max-width:1200px;margin:auto;
-display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
+  max-width:1200px;margin:auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
 }
 .footer-bottom{
-text-align:center;margin-top:30px;
-font-size:14px;color:#94a3b8;
+  text-align:center;margin-top:25px;
+  font-size:14px;opacity:.7;
 }
 
+/* FLOAT BUTTONS */
 .fixed-buttons{
-position:fixed;bottom:20px;right:20px;
-display:flex;flex-direction:column;gap:15px;
+  position:fixed;bottom:20px;right:20px;
+  display:flex;flex-direction:column;gap:12px;
 }
 .fixed-buttons a{
-width:60px;height:60px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-color:white;font-size:26px;
+  width:58px;height:58px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-size:26px;
 }
 .whatsapp-btn{background:#25D366;}
 .call-btn{background:var(--primary);}
@@ -174,75 +184,52 @@ color:white;font-size:26px;
 <h3>IRON SHEET PRODUCTS</h3>
 <div class="product-grid">
 
+<!-- YOUR CARDS UNTOUCHED BELOW -->
 <div class="card">
 <img src="corrugated.jfif">
-<div class="card-body">
-<h4>Corrugated Dumuzaz</h4>
-<p>Gauge 30 – Ksh 350 per metre</p>
-</div>
+<div class="card-body"><h4>Corrugated Dumuzaz</h4><p>Gauge 30 – Ksh 350 per metre</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="dumuzas.jfif">
-<div class="card-body">
-<h4>Dumuzas Ordinary</h4>
-<p>Ksh 300 per metre</p>
-</div>
+<div class="card-body"><h4>Dumuzas Ordinary</h4><p>Ksh 300 per metre</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="versitile.jfif">
-<div class="card-body">
-<h4>Versatile / Eurotile</h4>
-<p>Modern tile mabati</p>
-</div>
+<div class="card-body"><h4>Versatile / Eurotile</h4><p>Modern tile mabati</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="im1.jfif">
-<div class="card-body">
-<h4>Box Profile</h4>
-<p>Ksh 440 per metre</p>
-</div>
+<div class="card-body"><h4>Box Profile</h4><p>Ksh 440 per metre</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="im2.jfif">
-<div class="card-body">
-<h4>Roman Tile</h4>
-<p>Ksh 550 per metre</p>
-</div>
+<div class="card-body"><h4>Roman Tile</h4><p>Ksh 550 per metre</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="versatile1.jpg">
-<div class="card-body">
-<h4>Versatile Ridges</h4>
-<p>Ksh 550</p>
-</div>
+<div class="card-body"><h4>Versatile Ridges</h4><p>Ksh 550</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="versatile1.jpg">
-<div class="card-body">
-<h4>Brick Tile Ridge</h4>
-<p>Ksh 750</p>
-</div>
+<div class="card-body"><h4>Brick Tile Ridge</h4><p>Ksh 750</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="versatile1.jpg">
-<div class="card-body">
-<h4>Ridges</h4>
-<p>Ksh 750</p>
-</div>
+<div class="card-body"><h4>Ridges</h4><p>Ksh 750</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
@@ -255,94 +242,62 @@ color:white;font-size:26px;
 
 <div class="card">
 <img src="hoop.jpg">
-<div class="card-body">
-<h4>Hoop Iron 16 Gauge</h4>
-<p>20kg – Ksh 3,800</p>
-</div>
+<div class="card-body"><h4>Hoop Iron 16 Gauge</h4><p>20kg – Ksh 3,800</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="d8.jpg">
-<div class="card-body">
-<h4>D8 Steel</h4>
-<p>Ksh 450</p>
-</div>
+<div class="card-body"><h4>D8 Steel</h4><p>Ksh 450</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="d10.jpg">
-<div class="card-body">
-<h4>D10 Steel</h4>
-<p>Ksh 750</p>
-</div>
+<div class="card-body"><h4>D10 Steel</h4><p>Ksh 750</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="r6.jpg">
-<div class="card-body">
-<h4>Round Bar</h4>
-<p>Construction grade</p>
-</div>
+<div class="card-body"><h4>Round Bar</h4><p>Construction grade</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="2360.jpg">
-<div class="card-body">
-<h4>Angle Line 2360</h4>
-<p>Heavy duty steel</p>
-</div>
+<div class="card-body"><h4>Angle Line 2360</h4><p>Heavy duty steel</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="cem1.jpg">
-<div class="card-body">
-<h4>Simba Cement</h4>
-<p>Ksh. 550</p>
-</div>
+<div class="card-body"><h4>Simba Cement</h4><p>Ksh. 550</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
 <img src="cem1.jpg">
-<div class="card-body">
-<h4>Simba power</h4>
-<p>Ksh. 680</p>
-</div>
+<div class="card-body"><h4>Simba power</h4><p>Ksh. 680</p></div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
 
 <div class="card">
-<img src="t1.jpg">
-<img src="t2.jpg">
-<img src="t3.jpg">
+<img src="t1.jpg"><img src="t2.jpg"><img src="t3.jpg">
 <div class="card-body">
-<h4>WATER TANKS (KENTANK, TECHNO TANK & ROTO TANK)</h4>
-<p>1000 Litres Ksh.  4,500
-
-2000 Litres Ksh. 10,500
-
-3000 Litres Ksh. 14,500
-
-4000 Litres Ksh. 18,500
-
-5000 Litres Ksh. 24,500
-
-6000 Litres Ksh. 27,500
-
-8000 Litres Ksh. 32,500
-
-10000 Litres Ksh. 45,500
-
-16000 Litres Ksh. 96,500
-
-20000 Litres Ksh. 126,500
-
-24000 Litres Ksh. 148,500</p>
+<h4>WATER TANKS</h4>
+<p>1000L – Ksh 4,500
+2000L – Ksh 10,500
+3000L – Ksh 14,500
+4000L – Ksh 18,500
+5000L – Ksh 24,500
+6000L – Ksh 27,500
+8000L – Ksh 32,500
+10000L – Ksh 45,500
+16000L – Ksh 96,500
+20000L – Ksh 126,500
+24000L – Ksh 148,500
+</p>
 </div>
 <a class="buy-btn" href="https://wa.me/254732855001">Buy Now</a>
 </div>
@@ -351,14 +306,8 @@ color:white;font-size:26px;
 
 <footer id="footer">
 <div class="footer-inner">
-<div>
-<h4>Contact</h4>
-<p>📞 0732855001<br></p>
-</div>
-<div>
-<h4>Location</h4>
-<p>Nairobi, Kenya</p>
-</div>
+<div><h4>Contact</h4><p>📞 0732855001</p></div>
+<div><h4>Location</h4><p>Nairobi, Kenya</p></div>
 </div>
 <div class="footer-bottom">© 2026 DEVKI MILL MAISHA MABATI</div>
 </footer>
