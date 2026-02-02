@@ -3,109 +3,308 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Dashboard</title>
+<title>DEVKI MILL MAISHA MABATI</title>
+
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="logo.jfif">
+
 <style>
-    body {
-        margin: 0;
-        background: #0F172A;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #E2E8F0;
-    }
+:root{
+--primary:#0b3c91;
+--secondary:#c4161c;
+--accent:#f4c430;
+--light:#f8fafc;
+--dark:#0f172a;
+--white:#ffffff;
+--gradient:linear-gradient(135deg,#0b3c91,#c4161c);
+}
 
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 18px 28px;
-        border-bottom: 1px solid #1E293B;
-    }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+body{background:var(--light);padding-top:120px;color:var(--dark);}
 
-    .title {
-        font-size: 20px;
-        font-weight: 600;
-    }
+header{
+position:fixed;top:0;width:100%;background:white;
+border-bottom:2px solid #e5e7eb;z-index:1000;
+}
+.header-inner{
+max-width:1200px;margin:auto;padding:25px;
+display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.logo{display:flex;align-items:center;gap:15px;}
+.logo img{width:60px;border-radius:8px;}
+.logo h1{
+font-size:26px;font-weight:700;
+background:var(--gradient);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+nav a{margin:0 12px;font-weight:500;}
 
-    .user-menu {
-        width: 36px;
-        height: 36px;
-        background: #1E293B;
-        border-radius: 50%;
-    }
+.hero{
+background:var(--gradient);
+color:white;
+padding:150px 30px 120px;
+}
+.hero h2{font-size:46px;margin-bottom:15px;}
+.hero p{max-width:800px;color:#e5e7eb;}
 
-    .container {
-        padding: 28px;
-    }
+.hero-buttons{
+margin-top:25px;display:flex;gap:15px;flex-wrap:wrap;
+}
+.hero-buttons a{
+padding:12px 22px;border-radius:10px;
+color:white;font-weight:600;
+}
+.whatsapp{background:#25D366;}
+.call{background:var(--primary);}
+.email{background:var(--secondary);}
 
-    .section-title {
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
+section{max-width:1200px;margin:auto;padding:80px 30px;}
+section h3{font-size:32px;margin-bottom:25px;}
+section h3::after{
+content:"";display:block;width:70px;height:4px;
+background:var(--secondary);margin-top:10px;
+}
 
-    .list {
-        background: #1E293B;
-        border: 1px solid #334155;
-        border-radius: 10px;
-        overflow: hidden;
-    }
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
 
-    .item {
-        padding: 14px 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #334155;
-        font-size: 14px;
-    }
+.card{
+background:white;border-radius:16px;
+overflow:hidden;
+box-shadow:0 10px 35px rgba(0,0,0,.1);
+display:flex;flex-direction:column;
+transition:.3s;
+}
+.card:hover{transform:translateY(-6px);}
 
-    .item:last-child {
-        border-bottom: none;
-    }
+.card img{
+width:100%;height:220px;
+object-fit:cover;
+}
 
-    .status {
-        padding: 4px 10px;
-        border-radius: 999px;
-        font-size: 12px;
-        font-weight: 600;
-    }
+.card-body{padding:20px;flex:1;}
+.card-body h4{font-size:18px;margin-bottom:8px;}
+.card-body p{font-size:14px;color:var(--primary);white-space:pre-line;}
 
-    .pending { background:#FACC15; color:#1E293B; }
-    .in-progress { background:#3B82F6; }
-    .done { background:#10B981; }
+.buy-btn{
+margin:15px;
+padding:12px;
+text-align:center;
+background:var(--gradient);
+color:white;border-radius:10px;
+font-weight:600;
+}
 
+footer{
+background:#0f1b2b;color:#cbd5f5;
+padding:70px 30px 40px;
+}
+.footer-inner{
+max-width:1200px;margin:auto;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+.footer-bottom{
+text-align:center;margin-top:30px;
+font-size:14px;color:#94a3b8;
+}
+
+.fixed-buttons{
+position:fixed;bottom:20px;right:20px;
+display:flex;flex-direction:column;gap:15px;
+}
+.fixed-buttons a{
+width:60px;height:60px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+color:white;font-size:26px;
+}
+.whatsapp-btn{background:#25D366;}
+.call-btn{background:var(--primary);}
 </style>
 </head>
+
 <body>
 
 <header>
-    <div class="title">My Projects</div>
-    <div class="user-menu"></div>
+<div class="header-inner">
+<div class="logo">
+<img src="logo.jfif">
+<h1>DEVKI MILL MAISHA MABATI</h1>
+</div>
+<nav>
+<a href="#iron-products">Products</a>
+<a href="#footer">Contact</a>
+</nav>
+</div>
 </header>
 
-<div class="container">
-
-    <div class="section-title">Active Projects</div>
-    <div class="list">
-        <div class="item">
-            <span>API Dashboard</span>
-            <span class="status in-progress">In Progress</span>
-        </div>
-        <div class="item">
-            <span>Marketing Website</span>
-            <span class="status pending">Pending</span>
-        </div>
-        <div class="item">
-            <span>Onboarding Flow</span>
-            <span class="status done">Done</span>
-        </div>
-    </div>
-
+<div class="hero">
+<h2>Strong • Durable • Affordable Roofing</h2>
+<p>Leading supplier of steel, mabati & building materials across Kenya.</p>
+<div class="hero-buttons">
+<a class="whatsapp" href="https://wa.me/254734352553">WhatsApp</a>
+<a class="call" href="tel:+254734352553">Call</a>
+<a class="email" href="mailto:maishamabati56@gmail.com">Email</a>
+</div>
 </div>
 
-<script>
-    // Example dynamic behavior
-    console.log("Dashboard Loaded");
-</script>
+<!-- IRON PRODUCTS -->
+<section id="iron-products">
+<h3>IRON SHEET PRODUCTS</h3>
+<div class="product-grid">
+
+<div class="card">
+<img src="corrugated.jfif">
+<div class="card-body">
+<h4>Corrugated Dumuzaz</h4>
+<p>Gauge 30 – Ksh 350 per metre</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="dumuzas.jfif">
+<div class="card-body">
+<h4>Dumuzas Ordinary</h4>
+<p>Ksh 300 per metre</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="versitile.jfif">
+<div class="card-body">
+<h4>Versatile / Eurotile</h4>
+<p>Modern tile mabati</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="im1.jfif">
+<div class="card-body">
+<h4>Box Profile</h4>
+<p>Ksh 440 per metre</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="im2.jfif">
+<div class="card-body">
+<h4>Roman Tile</h4>
+<p>Ksh 550 per metre</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="va1.jfif">
+<div class="card-body">
+<h4>Versatile Ridges</h4>
+<p>Ksh 550</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="ri2.jfif">
+<div class="card-body">
+<h4>Brick Tile Ridge</h4>
+<p>Ksh 750</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="ri1.jfif">
+<div class="card-body">
+<h4>Ridges</h4>
+<p>Ksh 750</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+</div>
+</section>
+
+<!-- STEEL & BUILDING MATERIALS -->
+<section>
+<h3>STEEL & BUILDING PRODUCTS</h3>
+<div class="product-grid">
+
+<div class="card">
+<img src="iron1.jfif">
+<div class="card-body">
+<h4>Hoop Iron 16 Gauge</h4>
+<p>20kg – Ksh 3,800</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="D8.jfif">
+<div class="card-body">
+<h4>D8 Steel</h4>
+<p>Ksh 450</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="D10.jfif">
+<div class="card-body">
+<h4>D10 Steel</h4>
+<p>Ksh 750</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="ROUND1.jfif">
+<div class="card-body">
+<h4>Round Bar</h4>
+<p>Construction grade</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="ANGLE.jfif">
+<div class="card-body">
+<h4>Angle Line 2360</h4>
+<p>Heavy duty steel</p>
+</div>
+<a class="buy-btn" href="https://wa.me/254734352553">Buy Now</a>
+</div>
+
+</div>
+</section>
+
+<footer id="footer">
+<div class="footer-inner">
+<div>
+<h4>Contact</h4>
+<p>📞 +254 734 352 553<br>✉️ maishamabati56@gmail.com</p>
+</div>
+<div>
+<h4>Location</h4>
+<p>Nairobi, Kenya</p>
+</div>
+</div>
+<div class="footer-bottom">© 2026 DEVKI MILL MAISHA MABATI</div>
+</footer>
+
+<div class="fixed-buttons">
+<a class="whatsapp-btn" href="https://wa.me/254734352553"><i class='bx bxl-whatsapp'></i></a>
+<a class="call-btn" href="tel:+254734352553"><i class='bx bx-phone'></i></a>
+</div>
 
 </body>
 </html>
